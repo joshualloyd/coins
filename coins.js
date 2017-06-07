@@ -32,15 +32,22 @@ function coinCounter (amount) {
   coinPurse.dimes = Math.floor(remainder / 10);
   console.log("Here's your dimes", coinPurse.dimes);
 
-  
-
   // get the remainder after getting dimes
   var remainder = remainder % 10;
 
+  coinPurse.nickels = Math.floor(remainder / 5);
+  console.log("Here's your nickels", coinPurse.nickels);
 
+  // remainder after getting nickels
+  var remainder = remainder % 5;
 
+  coinPurse.pennies = remainder;
+  console.log("Here's your pennies", coinPurse.pennies);
 
+  remainder = remainder - coinPurse.pennies;
 
+  // we should have the complete amount of change in the coinPurse and no remainder left
+  console.log("Here the remainder", remainder);
 
   return coinPurse;
 }
